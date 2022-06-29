@@ -1,20 +1,16 @@
 /* Modulos Nativos. */
-const fs = require("fs");
-const path = require("path");
-const path_public = path.resolve(__dirname, "./public");
 /* Modulos Instalados. */
 const express = require("express");
 const app = express();
+const router = express.Router();
 const ejs = require("ejs");
 /* Modulos Personales. */
-const home_route = require("./routers/home_route");
-const PORT = 3000;
+const home_controller = require("../controllers/home_controller");
 /*
 ===================================================================================================
 
 ===================================================================================================
 */
-app.set("view engine", "ejs");
-app.listen(PORT, console.log("Port: 3000"));
-app.use(express.static(path_public));
-app.use("", home_route);
+router.get("/", home_controller.home);
+
+module.exports = router;

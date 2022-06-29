@@ -7,14 +7,16 @@ const express = require("express");
 const app = express();
 const ejs = require("ejs");
 /* Modulos Personales. */
-const home_route = require("./routers/home_route");
-const PORT = 3000;
+const Objeto = require("../dataBase/dataBase");
 /*
 ===================================================================================================
 
 ===================================================================================================
 */
-app.set("view engine", "ejs");
-app.listen(PORT, console.log("Port: 3000"));
-app.use(express.static(path_public));
-app.use("", home_route);
+const home_controller = {
+    home: function (req, res) {
+        res.render("home", { Objeto: Objeto });
+    },
+};
+
+module.exports = home_controller;
