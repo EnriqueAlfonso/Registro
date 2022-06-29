@@ -7,3 +7,28 @@
 body {
     background-color: Silver;
 }
+
+.div {
+    width: 50%;
+    height: auto;
+    margin: 50px auto;
+    border: 1px solid Black;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+.h1 {
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: Black;
+}
+/*
+<div class="div">
+<img src="" alt="" class="img">
+</div>
+*/

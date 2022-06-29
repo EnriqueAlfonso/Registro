@@ -15,7 +15,16 @@ const Objeto = require("../dataBase/dataBase");
 */
 const home_controller = {
     home: function (req, res) {
-        res.render("home", { Objeto: Objeto });
+        res.render("home");
+    },
+    jaguar: function (req, res) {
+        let parametro = req.params.id;
+        let respuesta = Objeto.find((element) => element.id == parametro);
+        if (respuesta) {
+            res.render("jaguar", { Objeto: respuesta });
+        } else {
+            res.render("oops");
+        }
     },
 };
 

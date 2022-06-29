@@ -12,5 +12,6 @@ const home_controller = require("../controllers/home_controller");
 ===================================================================================================
 */
 router.get("/", home_controller.home);
+router.get("/jaguar/:id?", home_controller.jaguar);
 
 module.exports = router;
